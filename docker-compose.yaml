@@ -11,11 +11,10 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
-      - ./provisioning.sh:/provisioning.sh
+      - ./imgs:/usr/share/grafana/public/img/
+      - ./views:/usr/share/grafana/public/views/
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-un1s3c}
       - GF_USERS_ALLOW_SIGN_UP=false
-    command: "./provisioning.sh"
     user: "root"
-  
