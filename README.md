@@ -10,6 +10,3 @@ Procedimento de customização da interface do Grafana
     </tr>
 </table>
 
-
-
-Então acompanhei o processo de criação da dashboard  padrão para os clientes, se um novo clien
