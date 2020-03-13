@@ -1,6 +1,6 @@
 # Customização da Interface do Grafana
 
-Procedimento de customização da interface do Grafana
+Procedimento de customização da interface do Grafanaa
 
 ## Contruibuidor
 
