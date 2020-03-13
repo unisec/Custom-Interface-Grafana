@@ -9,3 +9,7 @@ Procedimento de customização da interface do Grafana
         <tr><img src="https://avatars2.githubusercontent.com/u/42282908?s=460&v=4" width="50"></td>
     </tr>
 </table>
+
+
+
+Então acompanhei o processo de criação da dashboard  padrão para os clientes, se um novo clien
