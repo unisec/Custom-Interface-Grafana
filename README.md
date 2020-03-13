@@ -2,7 +2,7 @@
 
 Procedimento de customização da interface do Grafana
 
-## Contruibuidor
+## Contribuidor
 
 <table>
     <tr>
