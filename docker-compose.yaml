@@ -9,7 +9,7 @@ services:
     volumes:
       - ./grafana/:/var/lib/grafana
       - ./imgs:/usr/share/grafana/public/img
-      - ./views:/usr/share/grafana/public/views
+      - ./scripts:/usr/share/grafana/public/build
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-un1s3c}
