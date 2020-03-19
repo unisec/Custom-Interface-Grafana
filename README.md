@@ -49,4 +49,3 @@ Substitua a imagem dentro de `/imgs/fav32.png` pela sua imagem.
 
 
 
-
