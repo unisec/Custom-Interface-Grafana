@@ -1,3 +1,10 @@
+[![](https://img.shields.io/badge/license-MIT-success)](https://github.com/unisec/CUSTOM-INTERFACE-GRAFANA/blob/master/LICENSE)
+
+<p style="display: flex; justify-content: center;">
+    <img src="imgs/grafana_icon.svg" width="200">
+     <img src="imgs/apple-touch-icon.png" width="200" height="190">
+</p>
+
 # CUSTOMIZAÇÃO  DA INTERFACE DO GRAFANA
 
 Procedimento de customização da interface do Grafanaa
@@ -35,9 +42,6 @@ Substitua a imagem dentro de `/imgs/heatmap_bg_test.svg` pela sua imagem.
 Substitua a imagem dentro de `/imgs/fav32.png` pela sua imagem. 
 
 *Obs*: A nova imagem deve ser no formato png e o nome deve ser alterado para `fav32.png`
-
-
-
 
 ## CONTRIBUIDOR
 
