@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/license-MIT-success)](https://github.com/unisec/CUSTOM-INTERFACE-GRAFANA/blob/master/LICENSE)
 
 <p align="center">
-    <img src="imgs/grafana_icon.svg" width="200">
+    <img src="imgs/grafana_icon.svg" width="200" height="200">
      <img src="imgs/apple-touch-icon.png" width="200" height="190">
 </p>
 
