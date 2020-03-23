@@ -55,6 +55,15 @@ No arquivo `grafana.ini` faça a alteração do seguinte trexo para:
 enabled = true
 ```
 
+Em seguida vá até `share dashboard` e copie o endereço gerado. O endereço irá precisar ser alterado, localize nela dois parâmetros `from=` e `to=`.
+
+Substitua os valores depois do igua para os seguintes.
+
+- `from=`now-5m
+
+- `to=`now
+
+
 
 
 ## CONTRIBUIDOR
