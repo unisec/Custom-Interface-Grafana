@@ -43,6 +43,20 @@ Substitua a imagem dentro de `/imgs/fav32.png` pela sua imagem.
 
 *Obs*: A nova imagem deve ser no formato png e o nome deve ser alterado para `fav32.png`
 
+
+## COMPARTILHAMENTO DE DASHBOARDS
+
+No arquivo `grafana.ini` faça a alteração do seguinte trexo para:
+
+```
+#################################### Anonymous Auth ######################
+[auth.anonymous]
+# enable anonymous access
+enabled = true
+```
+
+
+
 ## CONTRIBUIDOR
 
 <table>
