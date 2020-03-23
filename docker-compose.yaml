@@ -17,5 +17,3 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-un1s3c}
       - GF_USERS_ALLOW_SIGN_UP=false
     user: "root"
-
-    
