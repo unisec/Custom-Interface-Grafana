@@ -11,7 +11,6 @@ services:
       - ./imgs:/usr/share/grafana/public/img
       - ./scripts:/usr/share/grafana/public/build
       - ./grafana.ini:/etc/grafana/grafana.ini
-      - ./home.json:/usr/share/grafana/public/dashboards/home.json
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-un1s3c}
