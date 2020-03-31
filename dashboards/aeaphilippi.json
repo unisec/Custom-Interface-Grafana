@@ -1,0 +1,2605 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "limit": 100,
+        "minseverity": 0,
+        "name": "Indice group id",
+        "rawQuery": "SELECT\n    UNIX_TIMESTAMP(<time_column>) as time_sec,\n    <text_column> as text,\n    <tags_column> as tags\n  FROM <table name>\n  WHERE $__timeFilter(time_column)\n  ORDER BY <time_column> ASC\n  LIMIT 100\n  ",
+        "showIn": 0,
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 44,
+  "iteration": 1584961873477,
+  "links": [],
+  "panels": [
+    {
+      "content": "<h1 style=\"text-align: center; background-color: #8700db; margin: 0px; border: 0px; height:100%;\"><p style=\"position: absolute; padding-top: 1.5%;\">ENERGIA</p></h1>",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 24,
+      "mode": "html",
+      "options": {},
+      "repeat": null,
+      "repeatDirection": null,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "content": "<h1 style=\"text-align: center; background-color: red; margin: 0px; border: 0px; height:100%;\"><p style=\"position: absolute; padding-top: 1.5%;\">INCIDENTES</p></h1>",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 25,
+      "mode": "html",
+      "options": {},
+      "repeatDirection": null,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "Zabbix",
+      "description": "% Carga da bateria - Nobreak",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 2
+      },
+      "id": 15,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "%",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "UPS Battery"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$nobreak"
+          },
+          "item": {
+            "filter": "Battery Capacity [HighPrec]"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "100,50",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "% Carga da bateria - Nobreak",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Zabbix",
+      "description": "status de troca da batéria - Nobreak",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 2
+      },
+      "id": 17,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "UPS Battery"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$nobreak"
+          },
+          "item": {
+            "filter": "Battery Status"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "1,2",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "status de troca da batéria - Nobreak",
+      "type": "singlestat",
+      "valueFontSize": "30%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Bateria precisa ser trocada",
+          "value": "2"
+        },
+        {
+          "op": "=",
+          "text": "Bateria não precisa ser trocada",
+          "value": "1"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Zabbix",
+      "decimals": null,
+      "description": "Tempo de autonomia",
+      "format": "dthms",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 2
+      },
+      "id": 22,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": " h",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$nobreak"
+          },
+          "item": {
+            "filter": "Battery Runtime"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "02:00:00,01:00:00,00:30:00",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Tempo de autonomia",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Zabbix",
+      "description": "Cº Temperatura da telecom",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 2
+      },
+      "id": 20,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "Cº",
+      "postfixFontSize": "30%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "UPS Information"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$nobreak"
+          },
+          "item": {
+            "filter": "Probe Temperature"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "25, 50, 100",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Cº Temperatura Telecom",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "ackEventColor": "rgb(56, 219, 156)",
+      "ageField": false,
+      "customLastChangeFormat": false,
+      "datasource": null,
+      "description": "Log de alertas ",
+      "descriptionAtNewLine": false,
+      "descriptionField": true,
+      "fontSize": "80%",
+      "gridPos": {
+        "h": 18,
+        "w": 12,
+        "x": 12,
+        "y": 2
+      },
+      "highlightBackground": false,
+      "highlightNewEvents": false,
+      "highlightNewerThan": "1h",
+      "hostField": true,
+      "hostGroups": false,
+      "hostProxy": false,
+      "hostTechNameField": false,
+      "hostsInMaintenance": true,
+      "id": 19,
+      "lastChangeFormat": "",
+      "layout": "table",
+      "limit": 100,
+      "markAckEvents": false,
+      "okEventColor": "rgb(56, 189, 113)",
+      "options": {},
+      "pageSize": 100,
+      "problemTimeline": true,
+      "resizedColumns": [],
+      "schemaVersion": 7,
+      "severityField": true,
+      "showEvents": {
+        "text": "Problems",
+        "value": 1
+      },
+      "showTags": false,
+      "showTriggers": "all triggers",
+      "sortTriggersBy": {
+        "text": "last change",
+        "value": "lastchange"
+      },
+      "statusField": true,
+      "statusIcon": false,
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "datasource": "Zabbix",
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": ""
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "refId": "A",
+          "tags": {
+            "filter": ""
+          },
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Log de alertas ",
+      "triggerSeverity": [
+        {
+          "color": "rgb(108, 108, 108)",
+          "priority": 0,
+          "severity": "Not classified",
+          "show": true
+        },
+        {
+          "color": "rgb(120, 158, 183)",
+          "priority": 1,
+          "severity": "Information",
+          "show": true
+        },
+        {
+          "color": "rgb(175, 180, 36)",
+          "priority": 2,
+          "severity": "Warning",
+          "show": true
+        },
+        {
+          "color": "rgb(255, 137, 30)",
+          "priority": 3,
+          "severity": "Average",
+          "show": true
+        },
+        {
+          "color": "rgb(255, 101, 72)",
+          "priority": 4,
+          "severity": "High",
+          "show": true
+        },
+        {
+          "color": "rgb(215, 0, 0)",
+          "priority": 5,
+          "severity": "Disaster",
+          "show": true
+        }
+      ],
+      "type": "alexanderzobnin-zabbix-triggers-panel"
+    },
+    {
+      "content": "<h1 style=\"text-align: center; background-color: darkblue; margin: 0px; border: 0px; height:100%;\"><p style=\"position: absolute; padding-top: 1.5%;\">CONTROLE DE ACESSO</p></h1>",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 0,
+        "y": 5
+      },
+      "id": 26,
+      "mode": "html",
+      "options": {},
+      "repeatDirection": null,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#C4162A",
+        "#C4162A",
+        "#299c46"
+      ],
+      "datasource": "Zabbix",
+      "description": "Disponibilidade do controle de accessus",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 7
+      },
+      "id": 31,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "Status"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$accessus"
+          },
+          "item": {
+            "filter": "Zabbix agent availability"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "0,1",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Disponibilidade Accessus",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Em funcionamento",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Sem funcionamento",
+          "value": "0"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "MySQL",
+      "description": "Controladoras Down",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 7
+      },
+      "id": 44,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Up\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($controllers) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 1\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Controladoras Up",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#C4162A",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "MySQL",
+      "description": "Quantidade de controladoras down",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 7
+      },
+      "id": 52,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Down\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($controllers) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 0",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Controladoras Down",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "content": "<h1 style=\"text-align: center; background-color: #3366ff; margin: 0px; border: 0px; height:100%;\"><p style=\"position: absolute; padding-top: 1.5%;\">VIDEO MONITORAMENTO</p></h1>",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 0,
+        "y": 10
+      },
+      "id": 27,
+      "mode": "html",
+      "options": {},
+      "repeatDirection": null,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "#37872D",
+        "#299c46"
+      ],
+      "datasource": "Zabbix",
+      "description": "Disponibilidade ExacqVision",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 12
+      },
+      "id": 30,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "Status"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$exacqvision"
+          },
+          "item": {
+            "filter": "Zabbix agent availability"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "1,0",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Disponibilidade ExacqVision",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Em funcionamento",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Sem funcionamento",
+          "value": "0"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "MySQL",
+      "description": "Armazenamento Exaqvision",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 12
+      },
+      "id": 55,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "%",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \n(((SELECT \n    avg(history_uint.value)\n    from history_uint \n         inner join items on\n         items.itemid = history_uint.itemid\n         inner join hosts on\n         items.hostid = hosts.hostid\n         inner join hosts_groups on\n        hosts.hostid = hosts_groups.hostid\n    where \n      hosts_groups.groupid = $groupid and\n      hosts.name in(\"$exacqvision\") and\n      history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and \n      items.name in(\"/mnt/edvr/1: Used space\") limit 1\n     ) / \n\n(SELECT \n    avg(history_uint.value)\n    from history_uint \n         inner join items on\n         items.itemid = history_uint.itemid\n         inner join hosts on\n         items.hostid = hosts.hostid\n         inner join hosts_groups on\n        hosts.hostid = hosts_groups.hostid\n    where \n      hosts_groups.groupid = $groupid and\n      hosts.name in(\"$exacqvision\") and\n      history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and \n      items.name in(\"/mnt/edvr/1: Total space\") limit 1\n     )) * 100) as \"Percentual de consumo\"\n\n\n\n\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "50,90",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Armazenamento Exaqvision",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "MySQL",
+      "description": "Câmeras em funcionamento",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 12
+      },
+      "id": 47,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Up\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($cftv) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 1\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Câmeras Up",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#C4162A",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "MySQL",
+      "description": "Quantidade de câmeras sem funcionamento",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 12
+      },
+      "id": 50,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Down\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($cftv) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 0",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Câmeras  Down",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "content": "<h1 style=\"text-align: center; background-color: #0e5709; margin: 0px; border: 0px; height:100%;\"><p style=\"position: absolute; padding-top: 1.5%;\">TELEFONIA</p></h1>",
+      "datasource": null,
+      "gridPos": {
+        "h": 2,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 32,
+      "mode": "html",
+      "options": {},
+      "repeatDirection": null,
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#d44a3a",
+        "#C4162A",
+        "#299c46"
+      ],
+      "datasource": "Zabbix",
+      "description": "Disponibilidade FreePBX",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 17
+      },
+      "id": 34,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "application": {
+            "filter": "Status"
+          },
+          "functions": [],
+          "group": {
+            "filter": "$group"
+          },
+          "host": {
+            "filter": "$freepbx"
+          },
+          "item": {
+            "filter": "Zabbix agent availability"
+          },
+          "mode": 0,
+          "options": {
+            "showDisabledItems": false,
+            "skipEmptyValues": false
+          },
+          "refId": "A",
+          "resultFormat": "time_series",
+          "table": {
+            "skipEmptyValues": false
+          },
+          "triggers": {
+            "acknowledged": 2,
+            "count": true,
+            "minSeverity": 3
+          }
+        }
+      ],
+      "thresholds": "0,1",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Disponibilidade FreePBX",
+      "type": "singlestat",
+      "valueFontSize": "50%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Em funcionamento",
+          "value": "1"
+        },
+        {
+          "op": "=",
+          "text": "Sem funcionamento",
+          "value": "0"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorPrefix": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "MySQL",
+      "description": "Quantidade de Interfones Up",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 17
+      },
+      "id": 45,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Up\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($interfones) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 1\n",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Interfones Up",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "#C4162A",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+      "datasource": "MySQL",
+      "description": "Quantidade de interfones down",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 9,
+        "y": 17
+      },
+      "id": 51,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "pluginVersion": "6.6.1",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "format": "table",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT \ncount(distinct hosts.name) as \"Down\"\nfrom history_uint \n    inner join items on\n    items.itemid = history_uint.itemid\n    inner join hosts on\n    items.hostid = hosts.hostid\n    inner join hosts_groups on\n    hosts.hostid = hosts_groups.hostid\nwhere \n  hosts_groups.groupid = $groupid and\n  hosts.name in($interfones) and\n  history_uint.clock between (UNIX_TIMESTAMP() - 700) and UNIX_TIMESTAMP() and\n  history_uint.value = 0",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Interfones Down",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [
+    "zabbix",
+    "mysql"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "text": "",
+          "value": ""
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(up{job=\"telegraf\"},instance)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "Instância",
+        "multi": false,
+        "name": "host",
+        "options": [
+          {
+            "selected": false,
+            "text": "172.16.0.2:9100",
+            "value": "172.16.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.17.0.2:9100",
+            "value": "172.17.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.18.0.2:9100",
+            "value": "172.18.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.19.0.2:9100",
+            "value": "172.19.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.20.0.2:9100",
+            "value": "172.20.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.21.0.2:9100",
+            "value": "172.21.0.2:9100"
+          },
+          {
+            "selected": false,
+            "text": "172.22.0.2:9100",
+            "value": "172.22.0.2:9100"
+          }
+        ],
+        "query": "label_values(up{job=\"telegraf\"},instance)",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "AeA Philippi",
+          "value": "AeA Philippi"
+        },
+        "datasource": "Zabbix",
+        "definition": "AeA Philippi",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "group",
+        "options": [
+          {
+            "selected": true,
+            "text": "AeA Philippi",
+            "value": "AeA Philippi"
+          }
+        ],
+        "query": "AeA Philippi",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "Nobreak APC - AeA",
+          "value": "Nobreak APC - AeA"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "nobreak",
+        "options": [
+          {
+            "selected": true,
+            "text": "Nobreak APC - AeA",
+            "value": "Nobreak APC - AeA"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(Nobreak APC.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "FreePBX AeA",
+          "value": "FreePBX AeA"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "freepbx",
+        "options": [
+          {
+            "selected": true,
+            "text": "FreePBX AeA",
+            "value": "FreePBX AeA"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(FreePBX.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "ExacqVision AeA",
+          "value": "ExacqVision AeA"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "exacqvision",
+        "options": [
+          {
+            "selected": true,
+            "text": "ExacqVision AeA",
+            "value": "ExacqVision AeA"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(ExacqVision.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "Docker - AeA Philippi",
+          "value": "Docker - AeA Philippi"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "accessus",
+        "options": [
+          {
+            "selected": true,
+            "text": "Docker - AeA Philippi",
+            "value": "Docker - AeA Philippi"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(Docker.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": false,
+        "name": "interfones",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "Interfone  Sala 2004 AeA",
+            "value": "Interfone  Sala 2004 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone 2001 Portaria AeA",
+            "value": "Interfone 2001 Portaria AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone 2002 Portaria AeA",
+            "value": "Interfone 2002 Portaria AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Auditorio AeA 2008",
+            "value": "Interfone Auditorio AeA 2008"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala  2005 Estacionamento AeA",
+            "value": "Interfone Sala  2005 Estacionamento AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala  2009 AeA",
+            "value": "Interfone Sala  2009 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 1001 CRECI AeA",
+            "value": "Interfone Sala 1001 CRECI AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 108 AeA",
+            "value": "Interfone Sala 108 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 109 AeA",
+            "value": "Interfone Sala 109 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 2001 AeA",
+            "value": "Interfone Sala 2001 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 2002 AeA",
+            "value": "Interfone Sala 2002 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 2003 AeA",
+            "value": "Interfone Sala 2003 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 2007 AeA",
+            "value": "Interfone Sala 2007 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 201 AeA",
+            "value": "Interfone Sala 201 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 202 AeA",
+            "value": "Interfone Sala 202 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 204 AeA",
+            "value": "Interfone Sala 204 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 209 AeA",
+            "value": "Interfone Sala 209 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 210 AeA",
+            "value": "Interfone Sala 210 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 211 AeA",
+            "value": "Interfone Sala 211 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 301 AeA",
+            "value": "Interfone Sala 301 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 302 AeA",
+            "value": "Interfone Sala 302 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 303 AeA",
+            "value": "Interfone Sala 303 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 304 AeA",
+            "value": "Interfone Sala 304 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 305 AeA",
+            "value": "Interfone Sala 305 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 306 AeA",
+            "value": "Interfone Sala 306 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 307 AeA",
+            "value": "Interfone Sala 307 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 308 AeA",
+            "value": "Interfone Sala 308 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 309 AeA",
+            "value": "Interfone Sala 309 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 310 AeA",
+            "value": "Interfone Sala 310 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 311 AeA",
+            "value": "Interfone Sala 311 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 401 AeA",
+            "value": "Interfone Sala 401 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 402 AeA",
+            "value": "Interfone Sala 402 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 403 AeA",
+            "value": "Interfone Sala 403 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 404 AeA",
+            "value": "Interfone Sala 404 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 405 AeA",
+            "value": "Interfone Sala 405 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 406 AeA",
+            "value": "Interfone Sala 406 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 407 AeA",
+            "value": "Interfone Sala 407 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 408 AeA",
+            "value": "Interfone Sala 408 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 410 AeA",
+            "value": "Interfone Sala 410 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 411 AeA",
+            "value": "Interfone Sala 411 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 501 AeA",
+            "value": "Interfone Sala 501 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 502 AeA",
+            "value": "Interfone Sala 502 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 503 AeA",
+            "value": "Interfone Sala 503 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 504 AeA",
+            "value": "Interfone Sala 504 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 505 AeA",
+            "value": "Interfone Sala 505 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 506 AeA",
+            "value": "Interfone Sala 506 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 507 AeA",
+            "value": "Interfone Sala 507 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 508 AeA",
+            "value": "Interfone Sala 508 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 509 AeA",
+            "value": "Interfone Sala 509 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 510 AeA",
+            "value": "Interfone Sala 510 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 511 AeA",
+            "value": "Interfone Sala 511 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 801 AeA",
+            "value": "Interfone Sala 801 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 807 AeA",
+            "value": "Interfone Sala 807 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Sala 808 AeA",
+            "value": "Interfone Sala 808 AeA"
+          },
+          {
+            "selected": false,
+            "text": "Interfone Video Porteiro - Imperatriz",
+            "value": "Interfone Video Porteiro - Imperatriz"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(Interfone.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "16",
+          "value": "16"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "groupid",
+        "options": [
+          {
+            "selected": true,
+            "text": "16",
+            "value": "16"
+          }
+        ],
+        "query": "16",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": false,
+        "name": "controllers",
+        "options": [],
+        "query": "$group.*",
+        "refresh": 1,
+        "regex": "/.*(Controladora.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "datasource": "Zabbix",
+        "definition": "$group.*",
+        "hide": 2,
+        "includeAll": true,
+        "label": null,
+        "multi": false,
+        "name": "cftv",
+        "options": [
+          {
+            "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
+            "text": "CFTV -  M3027 PVE Pilotis Fundos AEA",
+            "value": "CFTV -  M3027 PVE Pilotis Fundos AEA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV AEA  M3027 PVE  Pilotis Entrada",
+            "value": "CFTV AEA  M3027 PVE  Pilotis Entrada"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Bombas AeA",
+            "value": "CFTV Bombas AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Elevador 01 M3005 AeA",
+            "value": "CFTV Elevador 01 M3005 AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Elevador 02 M3005 AeA",
+            "value": "CFTV Elevador 02 M3005 AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Elevador 03 M3005 AeA",
+            "value": "CFTV Elevador 03 M3005 AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Elevador 04 M3005 AeA",
+            "value": "CFTV Elevador 04 M3005 AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Fundos M3005-V AeA",
+            "value": "CFTV Fundos M3005-V AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Garagem Hall Elevadores AeA",
+            "value": "CFTV Garagem Hall Elevadores AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Gerador M3005-V AeA",
+            "value": "CFTV Gerador M3005-V AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Inicio M3005-V AeA",
+            "value": "CFTV Inicio M3005-V AeA"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M1054 Pilotis Telecom",
+            "value": "CFTV M1054 Pilotis Telecom"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M1054 Terreo Recepcao",
+            "value": "CFTV M1054 Terreo Recepcao"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004  Andar 6",
+            "value": "CFTV M3004  Andar 6"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004  Andar 7",
+            "value": "CFTV M3004  Andar 7"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 1",
+            "value": "CFTV M3004 Andar 1"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 10",
+            "value": "CFTV M3004 Andar 10"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 11",
+            "value": "CFTV M3004 Andar 11"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 2",
+            "value": "CFTV M3004 Andar 2"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 3",
+            "value": "CFTV M3004 Andar 3"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 4",
+            "value": "CFTV M3004 Andar 4"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 5",
+            "value": "CFTV M3004 Andar 5"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 8",
+            "value": "CFTV M3004 Andar 8"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3004 Andar 9",
+            "value": "CFTV M3004 Andar 9"
+          },
+          {
+            "selected": false,
+            "text": "CFTV Entrada",
+            "value": "CFTV Entrada"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3005 Garagem Fundos",
+            "value": "CFTV M3005 Garagem Fundos"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3005 Porta Telecom",
+            "value": "CFTV M3005 Porta Telecom"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3005 Terreo Hall Elevadores",
+            "value": "CFTV M3005 Terreo Hall Elevadores"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3006 Garagem Acesso Portao",
+            "value": "CFTV M3006 Garagem Acesso Portao"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3006 Terreo Catracas",
+            "value": "CFTV M3006 Terreo Catracas"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3007 Garagem Circulação",
+            "value": "CFTV M3007 Garagem Circulação"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M3007 PV Pilotis Circulacao",
+            "value": "CFTV M3007 PV Pilotis Circulacao"
+          },
+          {
+            "selected": false,
+            "text": "CFTV M31054 Pilotis Guarita",
+            "value": "CFTV M31054 Pilotis Guarita"
+          },
+          {
+            "selected": false,
+            "text": "CFTV P1405 e  Terreo Lateral Esquina",
+            "value": "CFTV P1405 e  Terreo Lateral Esquina"
+          },
+          {
+            "selected": false,
+            "text": "CFTV P1405 e Garagem Rampa",
+            "value": "CFTV P1405 e Garagem Rampa"
+          },
+          {
+            "selected": false,
+            "text": "CFTV P1405 e Terreo Frente Esquina",
+            "value": "CFTV P1405 e Terreo Frente Esquina"
+          },
+          {
+            "selected": false,
+            "text": "CFTV P1405-A - Terreo Lateral",
+            "value": "CFTV P1405-A - Terreo Lateral"
+          }
+        ],
+        "query": "$group.*",
+        "refresh": 0,
+        "regex": "/.*(CFTV.*).*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "AeA Philippi",
+  "uid": "z8jZNOXZk",
+  "version": 11
+}
